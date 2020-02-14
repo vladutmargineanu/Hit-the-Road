@@ -4,35 +4,55 @@ Implementarea si utilizarea structurii de date hashtable(generica) pentru mapare
 Modelarea unei harti rutiere sub forma unui graf orientat pentru o rezolvare eficienta a problemei
 Elaborarea unei rezolvari complexe la o cerinta inspirata din realitate
 Intro
-O harta rutiera, definita prin orase si autostrazi intre aceste orase, poate fi reprezentata sub forma unui graf orientat in care nodurile reprezint orasele, iar muchiile reprezinta autostrazile (vom considera autostrazile ca fiind unidirectionale). O astfel de reprezentare a unei harti rutiere este foarte eficienta pentru a determina diferite proprietati ale acesteia (conectivitatea intre diferite orase, care sunt cele mai frecventate rute, cel mai scurt drum intre doua orase etc.).
+O harta rutiera, definita prin orase si autostrazi intre aceste orase, poate fi reprezentata sub forma unui graf orientat
+in care nodurile reprezint orasele, iar muchiile reprezinta autostrazile (vom considera autostrazile ca fiind
+unidirectionale). O astfel de reprezentare a unei harti rutiere este foarte eficienta pentru a determina diferite proprietati
+ale acesteia (conectivitatea intre diferite orase, care sunt cele mai frecventate rute, cel mai scurt drum intre doua orase 
+etc.).
 
 Enunt
-Fiind date orasele in ordinea lor lexicografica, legaturile dintre orase si orasele in care se afla benzinarii, va trebui sa determinati urmatoarele statistici si proprietati:
+Fiind date orasele in ordinea lor lexicografica, legaturile dintre orase si orasele in care se afla benzinarii, va trebui sa
+determinati urmatoarele statistici si proprietati:
 
 cel mai aglomerat oras;
 validitatea hartii rutiere;
 pentru un anumit oras, care sunt orasele inaccesibile lui;
-pentru o masina despre care se cunosc cantitatea initiala de combustibil, consumul acesteia si orasul in care se afla, trebuie sa determinati cea mai apropiata benzinarie in care poate alimenta (daca aceasta exista);
+pentru o masina despre care se cunosc cantitatea initiala de combustibil, consumul acesteia si orasul in care se afla, 
+trebuie sa determinati cea mai apropiata benzinarie in care poate alimenta (daca aceasta exista);
 fiind date traseele unor autobuze intre diferite orase, sa se determine traseul frecventat de cei mai multi calatori
 Notiunile definite mai sus vor fi explicate in detaliu in sectiunea urmatoare.
 
 Clarificari
 Generale
 consideram lungimea oricarei autostrazi ca fiind 1 unitate;
-consideram lumgimea drumului minim intre doua orase ca fiin numarul minim de muchii care trebuie parcurse pentru a ajunge de la un oras la altul;
+consideram lumgimea drumului minim intre doua orase ca fiin numarul minim de muchii care trebuie parcurse pentru a ajunge 
+de la un oras la altul;
 TASK 1
-Se defineste gradul de aglomeratie al unui oras ca fiind numarul de autostrazi care intra in orasul respectiv. Voi va trebui sa determinati orasul care are gradul de aglomeratie maxim. Daca exista mai multe orase cu grad maxim de aglomeratie il vezi afisa pe cel mai mic din punct de vedere lexicografic.
+Se defineste gradul de aglomeratie al unui oras ca fiind numarul de autostrazi care intra in orasul respectiv. Voi va trebui
+sa determinati orasul care are gradul de aglomeratie maxim. Daca exista mai multe orase cu grad maxim de aglomeratie il vezi
+afisa pe cel mai mic din punct de vedere lexicografic.
 
 TASK 2
-Consideram ca o harta rutiera este valida daca exista un traseu(format din una sau mai multe muchii) intre oricare doua orase.
+Consideram ca o harta rutiera este valida daca exista un traseu(format din una sau mai multe muchii) intre oricare doua
+orase.
 
 TASK 3
-Veti primi o lista cu mai multe orase. Pentru fiecare oras din aceasta lista va trebui sa determinati o lista de orase cu care acesta nu poate comunica(doua orase nu pot comunica daca nu exista un drum dus-intors intre ele). Daca harta rutiera este valida, va exista cel putin un drum intre oricare doua orase. Lista oraselor inaccesibile pe care o determinati trebuie sortata lexicografic dupa nume. Daca nu exista orase inaccesibile(se poate ajunge in orice oras), afisati pe o singura linie mesajul “Exista drum intre oricare doua orase”.
+Veti primi o lista cu mai multe orase. Pentru fiecare oras din aceasta lista va trebui sa determinati o lista de orase cu
+care acesta nu poate comunica(doua orase nu pot comunica daca nu exista un drum dus-intors intre ele). Daca harta rutiera
+este valida, va exista cel putin un drum intre oricare doua orase. Lista oraselor inaccesibile pe care o determinati
+trebuie sortata lexicografic dupa nume. Daca nu exista orase inaccesibile(se poate ajunge in orice oras), afisati pe o
+singura linie mesajul “Exista drum intre oricare doua orase”.
 
 TASK 4
-Pentru o lista de masini avand caracteristicile mentionate mai sus, trebuie sa determinati, pentru fiecare masina, cea mai apropiata benzinarie in care se poate ajunge cu masina respectiva. Daca masina se afla intr-un oras cu benzinarie, aceasta va trebui sa ajunga la o benzinarie dintr-un oras diferit fata de cel din care porneste. Pentru o masina aflata in orasul A si 2 benzinarii aflate in orasele B, respectiv C, consideram ca benzinaria B este mai apropiata de masina din A daca lungimea drumului minim de la A la B este mai mica decat lungimea drumului minim de la A la C.
+Pentru o lista de masini avand caracteristicile mentionate mai sus, trebuie sa determinati, pentru fiecare masina, cea mai
+apropiata benzinarie in care se poate ajunge cu masina respectiva. Daca masina se afla intr-un oras cu benzinarie, aceasta
+va trebui sa ajunga la o benzinarie dintr-un oras diferit fata de cel din care porneste. Pentru o masina aflata in orasul
+A si 2 benzinarii aflate in orasele B, respectiv C, consideram ca benzinaria B este mai apropiata de masina din A daca
+lungimea drumului minim de la A la B este mai mica decat lungimea drumului minim de la A la C.
 
-Fie o masina cu X litri de conbustibil intial si cu un consum de C litri per unitate. Pentru a putea parcurge o muchie dintre doua orase, masina TREBUIE sa aiba in rezervor cel putin ( >= ) C litri de combustibil. X si C reprezinta numere intregi strict pozitive(strict mai mari ca 0).
+Fie o masina cu X litri de conbustibil intial si cu un consum de C litri per unitate. Pentru a putea parcurge o muchie
+dintre doua orase, masina TREBUIE sa aiba in rezervor cel putin ( >= ) C litri de combustibil. X si C reprezinta numere
+intregi strict pozitive(strict mai mari ca 0).
 
 TASK 5
 Un traseu intre 2 orase este definit prin urmatorul tuplu: <nume_sursa nume_destinatie numar_calatori> unde:
@@ -40,9 +60,14 @@ Un traseu intre 2 orase este definit prin urmatorul tuplu: <nume_sursa nume_dest
 nume_sursa reprezinta numele orasului din care pleaca autobuzul
 nume_destinatie reprezinta numele orasului in care autobuzul opreste
 numar_calatori reprezinta cati calatori sunt in autobuz pe toata durata drumului
-Autobuzul nu opreste in orase intermediare; opreste doar in orasul destinatie. Pot exista mai multe autobuze care merg intre aceleasi orase A si B. Toate autobuzele merg pe drumul de lungime minima intre sursa si destinatie.
+Autobuzul nu opreste in orase intermediare; opreste doar in orasul destinatie. Pot exista mai multe autobuze care merg intre
+aceleasi orase A si B. Toate autobuzele merg pe drumul de lungime minima intre sursa si destinatie.
 
-Avand date toate rutele autobuzelor in formatul prezentat anterior, trebuie sa determinati ruta <nume_sursa nume_oras_intermediar_1 nume_oras_intermediar_2 … nume_oras_intermediar_k nume_destinatie> care este frecventata de cei mai multi calatori. Daca vor exista mai multe astfel de rute de aceeasi lungime minima, o veti afisa pe cea mai mica din punct de vedere lexicografic. Se defineste ca cel mai frecventat traseu, traseul parcurs de cei mai multi calatori, indiferent de numarul de autobuze care circula pe acel traseu.
+Avand date toate rutele autobuzelor in formatul prezentat anterior, trebuie sa determinati ruta <nume_sursa
+nume_oras_intermediar_1 nume_oras_intermediar_2 … nume_oras_intermediar_k nume_destinatie> care este frecventata de cei mai
+multi calatori. Daca vor exista mai multe astfel de rute de aceeasi lungime minima, o veti afisa pe cea mai mica din punct
+de vedere lexicografic. Se defineste ca cel mai frecventat traseu, traseul parcurs de cei mai multi calatori, indiferent de
+numarul de autobuze care circula pe acel traseu.
 
 Mai multe detalii despre formatul de afisare vor fi prezentate in sectiunea urmatoare.
 
@@ -54,12 +79,20 @@ Date de intrare
 Ordinea datelor de intrare este urmatoarea:
 
 Numarul de orase(N) si numarul de autostrazi(M) din harta rutiera;
-Lista oraselor sortate lexicografic dupa nume: <nume_0 nume_1 … nume_N-1>, unde nume_i < nume_i+1 din punct de vedere lexicografic;
-Urmeaza M linii de forma: <nume_oras_a nume_oras_b>, cu semnificatia ca exista o autostrada unidirectionala de la nume_oras_a la nume_oras_b;
-Un numar B care reprezinta numarul de benzinarii din harta rutiera, iar pe urmatoarea linie o lista de B orase, de forma: <nume_oras_benzinarie_0 nume_oras_benzinarie_0 … nume_oras_benzinarie_B-1>, unde nume_oras_benzinarie_i reprezinta un oras de pe harta in care se afla o benzinarie
-Un numar K, iar pe urmatoarea linie o lista de K nume de orase de forma: <nume_oras_task3_0 nume_oras_task3_1 … nume_oras_task3_K-1>, unde nume_oras_task3_i reprezinta numele unui oras de pe harta. Orasele din aceasta lista pot fi date in orice ordine
-Un numar L, urmat de L linii care vor descrie fiecare masina, avand urmatorul format: <nume_oras cantitate_combustibil consum_per_unitate>
-Un numar P, urmat de P linii care vor descrie fiecare traseu, avand urmatorul format: <nume_sursa nume_destinatie numar_calatori> (explicatia se afla in sectiunea de clarificari)
+Lista oraselor sortate lexicografic dupa nume: <nume_0 nume_1 … nume_N-1>, unde nume_i < nume_i+1 din punct de vedere
+lexicografic;
+Urmeaza M linii de forma: <nume_oras_a nume_oras_b>, cu semnificatia ca exista o autostrada unidirectionala de la
+nume_oras_a la nume_oras_b;
+Un numar B care reprezinta numarul de benzinarii din harta rutiera, iar pe urmatoarea linie o lista de B orase, de forma:
+<nume_oras_benzinarie_0 nume_oras_benzinarie_0 … nume_oras_benzinarie_B-1>, unde nume_oras_benzinarie_i reprezinta un oras
+de pe harta in care se afla o benzinarie
+Un numar K, iar pe urmatoarea linie o lista de K nume de orase de forma: <nume_oras_task3_0 nume_oras_task3_1 … 
+nume_oras_task3_K-1>, unde nume_oras_task3_i reprezinta numele unui oras de pe harta. Orasele din aceasta lista pot fi date
+in orice ordine
+Un numar L, urmat de L linii care vor descrie fiecare masina, avand urmatorul format: <nume_oras cantitate_combustibil 
+consum_per_unitate>
+Un numar P, urmat de P linii care vor descrie fiecare traseu, avand urmatorul format: <nume_sursa nume_destinatie
+numar_calatori> (explicatia se afla in sectiunea de clarificari)
 Exemplu
 7 8
 Boston Chicago LasVegas LosAngeles NewYork Washington Wisconsin
@@ -84,17 +117,21 @@ Washington NewYork 40
 Boston Wisconsin 25
 LasVegas LosAngeles 6
 Date de iesire
-Obs.: Pentru a puncta fiecare task in parte va trebui sa creati un fisier separat pentru afisarea rezultatelor fiecarui task. (Veti crea 5 fisiere task1.out, task2.out etc.)
+Obs.: Pentru a puncta fiecare task in parte va trebui sa creati un fisier separat pentru afisarea rezultatelor 
+fiecarui task. (Veti crea 5 fisiere task1.out, task2.out etc.)
 
 Format task1.out: nume_oras grad_aglomeratie
 
 Format task2.out: Daca reteaua este valida: HARTA VALIDA Daca reteaua este invalida: HARTA INVALIDA
 
-Format task3.out: Fisierul va contine K linii de forma Orase inaccesibile pentru <nume_oras_task3_i>: <nume_oras_inaccesibil_0> <nume_oras_inaccesibil_1> … <nume_oras_inaccesibil_j>
+Format task3.out: Fisierul va contine K linii de forma Orase inaccesibile pentru <nume_oras_task3_i>:
+<nume_oras_inaccesibil_0> <nume_oras_inaccesibil_1> … <nume_oras_inaccesibil_j>
 
-Format task4.out: Fisierul va contine L linii de forma, fiecare linie i corespunde masinii i din fisierul de intrare: Daca se poate ajunge la o benzinarie: DA - <combustibil ramas> Daca nu se poate ajunge la o benzinarie: NU
+Format task4.out: Fisierul va contine L linii de forma, fiecare linie i corespunde masinii i din fisierul de intrare:
+Daca se poate ajunge la o benzinarie: DA - <combustibil ramas> Daca nu se poate ajunge la o benzinarie: NU
 
-Format task5.out: <numar_total_calatori> <nume_sursa nume_oras_intermediar_1 nume_oras_intermediar_2 … nume_oras_intermediar_k nume_destinatie>
+Format task5.out: <numar_total_calatori> <nume_sursa nume_oras_intermediar_1 nume_oras_intermediar_2 … 
+nume_oras_intermediar_k nume_destinatie>
 
 Checker
 Resurse Tema2
@@ -108,7 +145,8 @@ Explicatie: Sunt 2 autostrazi care intra in NewYork (LosAngeles - NewYork si Was
 task2.out:
 
 HARTA INVALIDA
-Explicatie: Se observa ca exista mai multe orase intre care nu exista drum (direct sau indirect). Un astfel de exemplu este perechea de orase LosAngeles Boston.
+Explicatie: Se observa ca exista mai multe orase intre care nu exista drum (direct sau indirect). Un astfel de exemplu este
+perechea de orase LosAngeles Boston.
 
 task3.out:
 
@@ -119,12 +157,17 @@ task4.out:
 
 NU
 DA 0
-Explicatie: Prima masina are 5 litri de combustibil initial, un consum de 3 litri per unitate si se afla in LosAngeles. Cea mai apropiata benzinarie de ea este cea din LasVegas. Masina pleaca din LosAngeles si ajunge in NewYork cu 2 litri de combustibil ramasi, deci nu mai poate parcurge nicio alta autostrada si ramane blocata in NewYork. A doua masina are 3 litri de combustibil initial, un consum de 3 litri per unitate si se afla in Boston. Cea mai apropiata benzinarie de ea este cea din Chicago, la care poate ajunge parcurgand muchia Boston - Chicago, ramanand cu 0 litri de combustibil.
+Explicatie: Prima masina are 5 litri de combustibil initial, un consum de 3 litri per unitate si se afla in LosAngeles. 
+Cea mai apropiata benzinarie de ea este cea din LasVegas. Masina pleaca din LosAngeles si ajunge in NewYork cu 2 litri de
+combustibil ramasi, deci nu mai poate parcurge nicio alta autostrada si ramane blocata in NewYork. A doua masina are 3
+litri de combustibil initial, un consum de 3 litri per unitate si se afla in Boston. Cea mai apropiata benzinarie de ea
+este cea din Chicago, la care poate ajunge parcurgand muchia Boston - Chicago, ramanand cu 0 litri de combustibil.
 
 task5.out:
 
 41 LasVegas Washington LosAngeles
-Explicatie: Pe ruta LasVegas - LosAngeles circula 2 autobuze cu un numar total de 41 de calatori. Drumul de lungime minima de la LasVegas la LosAngeles este LasVegas → Washington → LosAngeles.
+Explicatie: Pe ruta LasVegas - LosAngeles circula 2 autobuze cu un numar total de 41 de calatori. Drumul de lungime minima
+de la LasVegas la LosAngeles este LasVegas → Washington → LosAngeles.
 
 Reguli pentru trimitere
 Temele vor trebui trimise pe vmchecker. Atenție! Temele trebuie trimise în secțiunea Structuri de Date (CA).
@@ -139,14 +182,19 @@ fisier README care să conțină detalii despre implementarea temei
 Punctaj
 80p teste
 Fiecare test este verificat cu valgrind. Dacă un test are memory leaks, nu va fi punctat.
-10p README + comentarii/claritate cod (ATENȚIE! Fișierul README trebuie făcut explicit, cât să se înțeleagă ce ați făcut în sursă, dar fără comentarii inutile și detalii inutile)
-10p pentru coding-style, proportional cu punctajul obtinut pe teste. De exemplu, pentru o temă care obține maxim pe teste, se pot obține 10p dacă nu aveți erori de coding style. Pentru o temă care obține 40p pe teste, se pot obține 5p dacă nu aveți erori de coding style.
+10p README + comentarii/claritate cod (ATENȚIE! Fișierul README trebuie făcut explicit, cât să se înțeleagă ce ați făcut în
+sursă, dar fără comentarii inutile și detalii inutile)
+10p pentru coding-style, proportional cu punctajul obtinut pe teste. De exemplu, pentru o temă care obține maxim pe teste,
+se pot obține 10p dacă nu aveți erori de coding style. Pentru o temă care obține 40p pe teste, se pot obține 5p dacă nu 
+aveți erori de coding style.
 O temă care obține 0p pe vmchecker este punctată cu 0p.
 O tema care nu compilează va fi punctată cu 0p
 Nu copiați!
-Toate soluțiile vor fi verificate folosind o unealtă de detectare a plagiatului. În cazul detectării unui astfel de caz, atât plagiatorul cât și autorul original (nu contează cine este sursa) vor primi punctaj 0 pe toate temele!
+Toate soluțiile vor fi verificate folosind o unealtă de detectare a plagiatului. În cazul detectării unui astfel de caz,
+atât plagiatorul cât și autorul original (nu contează cine este sursa) vor primi punctaj 0 pe toate temele!
 
-De aceea, vă sfătuim să nu vă lăsați rezolvări ale temelor pe calculatoare partajate (la laborator etc), pe mail/liste de discuții/grupuri etc.
+De aceea, vă sfătuim să nu vă lăsați rezolvări ale temelor pe calculatoare partajate (la laborator etc), pe mail/liste de
+discuții/grupuri etc.
 
 FAQ
 Q: Se poate folosi STL?
